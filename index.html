@@ -12,21 +12,27 @@
   <header class="head">
     <a href="#" class="logo"><image class="logo" src="Image/Logo.png"></image></a>
 </header>
-<div class="BG"></div>
+<div class="BG"></div>        
   <div class="wrapper">
+    <div class="column">
+      <input type="text" id="current-cgpa" placeholder=" Your Current CGPA">
+      <input type="number" id="completed-credits" placeholder="Completed Credits">
+    </div>
+    
+          
     <div class="form-wrapper">
       <span id="gp">GPA: 0.0</span>
       <button id="add-btn">
-        Add Course
-        <i class="fa fa-plus"></i>
+        Add Course +
       </button>
 
+      
       <form action="" onsubmit="return false;" id="course-form">
 
         <div class="col">
           <input type="text" placeholder="Course Code">
           <input type="number" placeholder="Credits">
-          <select>
+          <select class="grade-select">
             <option value="A+">A+</option>
             <option value="A">A</option>
             <option value="A-">A-</option>
@@ -38,11 +44,17 @@
             <option value="D">D</option>
             <option value="F">F</option>
           </select>
+          
           <button class="remove-course">
             <i class="fa fa-times"></i>
           </button>
         </div>
       </form>
+         <!-- New Overall CGPA Box -->
+        <div id="overall-cgpa">
+          CGPA: 0.0
+        </div>
+
       <button id="submit-btn">Submit</button>
       <div style="clear: both;"></div>
     </div>
