@@ -2,7 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
+
+
 .logo{
   height: 65px;
   padding-top: 5px;
@@ -13,7 +18,7 @@
   background-image: linear-gradient(to right, #ffffff ,#ffffff , #244f8f);
 }
 .BG {
-  background-image: url('Image/EWU.jpg'); 
+  background-image: url('Image/EWU.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -25,6 +30,24 @@
   z-index: -1; 
   opacity: 90; 
 }
+
+.wrapper .column {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+  gap: 1.5em;
+}
+.wrapper .column input {
+  padding: 12px;
+  width: 100%;
+}
+.wrapper .column select {
+  padding: 12px;
+}
+
+
 .wrapper {
   width: 800px;
   
@@ -71,6 +94,8 @@
   display: inline-block;
   margin-bottom: 1.5em;
 }
+
+
 .fa-plus,
 .fa-times {
   color: #fff;
@@ -81,6 +106,21 @@
   border: none;
   border-radius: 5px;
 }
+#overall-cgpa {
+  background: #f1f1f1;
+  padding: 8px 40px;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-right: 10px;
+  float: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 2em;
+}
+
 #submit-btn {
   background: #0554f2;
   padding: 8px 40px;
@@ -121,4 +161,88 @@ padding-top: 5px;
   .form-wrapper .col {
     gap: 0.5em;
   }
+}
+
+
+
+footer{
+    background-color: #111;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
 }
