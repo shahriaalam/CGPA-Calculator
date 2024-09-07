@@ -334,12 +334,9 @@ to {
 }
 
 .wrapper .centered-box{
-
- margin-left: 35%;
-  
+ margin-left: 35%;  
 }
-/* Meter end here */
-
+/* Meter end */
 
 
 @media (max-width: 700px){
