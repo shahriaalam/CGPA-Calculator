@@ -241,6 +241,7 @@ footer{
 /* Meter Start */
 .gauge-box {
   width: auto;
+  overflow: visible; 
 .flame-gauge {
   opacity: 0;
   transition: all 2s;
@@ -304,7 +305,7 @@ to {
 .gauge-meter-chart {
   max-height: 50%;
   max-width: 50%;
-
+  overflow: visible; 
   @for $i from 1 through 8 {
       .p-#{$i} {
           opacity: 0.7;
@@ -329,16 +330,26 @@ to {
   max-width: 70%; /* Adjust size */
   width: 450px;
   box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-  padding: 15px; /* Padding for the gauge meter */
-  border-radius: 5px;
+  padding:0px; /* Padding for the gauge meter */
+  border-radius: 5px; 
 }
 
 .wrapper .centered-box{
- margin-left: 35%;  
+ margin-left: 35%;
+ 
 }
 /* Meter end */
 
+/* emoji start */
+.emoji{
+  
+  display: flex;
+  align-items: center;
+  margin-left: 35%;
+  max-width: 20%;
+}
 
+/* emoji end */
 @media (max-width: 700px){
     .footerNav ul{
         flex-direction: column;
