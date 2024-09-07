@@ -1,358 +1,189 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
 
+const btn = document.getElementById("submit-btn");
+const addCourseBtn = document.getElementById("add-btn");
+const courseForm = document.getElementById("course-form");
+const gp = document.getElementById("gp");
+const overallCgpaBox = document.getElementById("overall-cgpa");
+const currentCgpaInput = document.getElementById("current-cgpa");
+const completedCreditsInput = document.getElementById("completed-credits");
 
-.logo{
-  height: 65px;
-  padding-top: 5px;
-  padding-left: 20px;
-  mix-blend-mode: darken;
-}
-.head{
-  background-image: linear-gradient(to right, #ffffff ,#ffffff , #244f8f);
-}
-.BG {
-  background-image: url('Image/EWU.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; 
-  opacity: 90; 
-}
+// Event listener for the submit button
+btn.addEventListener("click", () => {
+    let data = [];
 
-.wrapper .column {
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5em 0;
-  gap: 1.5em;
-}
-.wrapper .column input {
-  padding: 12px;
-  width: 100%;
-}
-.wrapper .column select {
-  padding: 12px;
-}
-
-
-.wrapper {
-  position: relative; /* Ensure the centered-box is positioned relative to this container */
-  width: 800px;
-  background-color: rgba(5, 5, 5, 0.5);
-  border-top: 5px solid #244f8f;
-  border-bottom: 5px solid #244f8f;
-  border-radius: 5px;
-  margin: 1.5em auto;
-  clear: both;
-  overflow: hidden; /* Ensures no elements go outside the box */
-  z-index: 1;
-}
-
-.form-wrapper {
-  color: whitesmoke;
-  margin: 1.5em 1em;
-  clear: both;
-}
-#course-form {
-  clear: both;
-}
-.form-wrapper .col {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5em 0;
-  gap: 1.5em;
-}
-.form-wrapper .col input {
-  padding: 12px;
-  width: 100%;
-}
-.form-wrapper .col select {
-  padding: 12px;
-}
-#add-btn {
-  padding: 8px;
-  background: #46da8b;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  float: right;
-  display: inline-block;
-  margin-bottom: 1.5em;
-}
-
-
-.fa-plus,
-.fa-times {
-  color: #fff;
-}
-.remove-course {
-  background: #e02401;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-}
-#overall-cgpa {
-  background: #f1f1f1;
-  padding: 8px 40px;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 0.5em;
-  margin-right: 10px;
-  float: left;
-  text-transform: uppercase;
-  font-weight: bold;
-  line-height: 2em;
-}
-
-#submit-btn {
-  background: #0554f2;
-  padding: 8px 40px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 0.5em;
-  float: right;
-  text-transform: uppercase;
-}
-#gp {
-  font-weight: 500;
-  font-family: Helvetica;
-  font-size: 1.2rem;
-}
-footer {
-  color: whitesmoke;
-  background-image: linear-gradient(to right, #ffffff ,#244f8f,#244f8f,#ffffff );
-  text-align: center;
-  font-size: 1rem;
-  font-family: Arial  Bold;
-  font-weight: 300;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem; 
-}
-
-.FT{
-padding-top: 5px;
-}
-@media (max-width: 768px) {
-  .wrapper {
-    width: fit-content;
-    margin: 1.5em 0.5em;
-  }
-  .form-wrapper .col {
-    gap: 0.5em;
-  }
-}
-
-
-
-footer{
-    background-color: #111;
-}
-.footerContainer{
-    width: 100%;
-    padding: 70px 30px 20px ;
-}
-.socialIcons{
-    display: flex;
-    justify-content: center;
-}
-.socialIcons a{
-    text-decoration: none;
-    padding:  10px;
-    background-color: white;
-    margin: 10px;
-    border-radius: 50%;
-}
-.socialIcons a i{
-    font-size: 2em;
-    color: black;
-    opacity: 0,9;
-}
-/* Hover affect on social media icon */
-.socialIcons a:hover{
-    background-color: #111;
-    transition: 0.5s;
-}
-.socialIcons a:hover i{
-    color: white;
-    transition: 0.5s;
-}
-.footerNav{
-    margin: 30px 0;
-}
-.footerNav ul{
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-}
-.footerNav ul li a{
-    color:white;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s;
-
-}
-.footerNav ul li a:hover{
-    opacity: 1;
-}
-.footerBottom{
-    background-color: #000;
-    padding: 20px;
-    text-align: center;
-}
-.footerBottom p{
-    color: white;
-}
-.designer{
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0px 5px;
-}
-
-
-
-
-
-/* Meter Start */
-.gauge-box {
-  width: auto;
-.flame-gauge {
-  opacity: 0;
-  transition: all 2s;
-
-  &.active {
-    display: inherit;
-    opacity: 1;
-
-    .flame {
-      animation-name: flames;
-      animation-duration: 0.3s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;	
-      transform-origin: 50% 100%;
+    // Gather form data
+    for (let i = 0; i < courseForm.children.length; i++) {
+        let col = [];
+        const inputs = courseForm.children[i].querySelectorAll("input, select");
+        for (let j = 1; j < inputs.length; j++) {
+            col.push(inputs[j].value);
+        }
+        data.push(col);
     }
 
-    .f-p1 {
-      animation-name: particles;
-      animation-duration: 0.8s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
+    calculateGP(data); // Call to calculate GPA and update gauge
+});
+
+// Event listener for adding a new course input row
+addCourseBtn.addEventListener("click", () => {
+    // Create form input row
+    const div = document.createElement("div");
+    div.className = "col";
+
+    // Create course code input box
+    const courseCodeBox = document.createElement("input");
+    courseCodeBox.type = "text";
+    courseCodeBox.placeholder = "Course Code";
+
+    // Create course unit input box
+    const courseUnitBox = document.createElement("input");
+    courseUnitBox.type = "number";
+    courseUnitBox.placeholder = "Credits";
+
+    // Create grade select input box
+    const select = document.createElement("select");
+    select.innerHTML = `
+      <option value="A+">A+</option>
+      <option value="A">A</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B">B</option>
+      <option value="B-">B-</option>
+      <option value="C+">C+</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="F">F</option>
+    `;
+
+    // Create remove course button
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "remove-course";
+    removeBtn.innerHTML = `<i class="fa fa-times"></i>`;
+    removeBtn.addEventListener("click", (e) => {
+        const self = e.target.closest('.col');
+        removeChild(self);
+    });
+
+    // Add input boxes to row
+    div.appendChild(courseCodeBox);
+    div.appendChild(courseUnitBox);
+    div.appendChild(select);
+    div.appendChild(removeBtn);
+
+    // Add row div to form
+    courseForm.appendChild(div);
+});
+
+// Function to calculate GPA and CGPA
+function calculateGP(data) {
+    const gradeMapping = {
+        "A+": 4.00,
+        "A": 3.75,
+        "A-": 3.50,
+        "B+": 3.25,
+        "B": 3.00,
+        "B-": 2.75,
+        "C+": 2.50,
+        "C": 2.25,
+        "D": 2.00,
+        "F": 0
+    };
+    let totalUnits = 0;
+    let cummPoints = 0;
+
+    for (let value of data) {
+        let [unit, grade] = value;
+        unit = Number(unit);
+        totalUnits += unit;
+        cummPoints += gradeMapping[grade] * unit;
     }
+    let newGPA = cummPoints / totalUnits;
+    gp.textContent = `GPA: ${newGPA.toFixed(2)}`;
 
-    .f-p2 {
-      animation-name: particles;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
+    // Calculate overall CGPA
+    let currentCgpa = parseFloat(currentCgpaInput.value);
+    let completedCredits = parseFloat(completedCreditsInput.value);
+    let overallCgpa = ((currentCgpa * completedCredits) + (newGPA * totalUnits)) / (completedCredits + totalUnits);
 
-    .f-p3 {
-      animation-name: particles;
-      animation-duration: 0.7s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-  }		
-}
+    overallCgpaBox.textContent = `CGPA: ${overallCgpa.toFixed(2)}`;
+
+    // Map GPA to a custom gauge percentage and update the gauge
+    let gpaPercentage = mapGpaToGauge(newGPA); // Custom mapping function
+    const gaugeMeter = document.querySelector(".gauge-box");
+    GaugeChart_SetPercent(gaugeMeter, gpaPercentage); // Pass the mapped gauge percentage
 }
 
-@keyframes particles {
-  from {
-    transform: translateY(15px);
-    opacity: 1;
-}
-  to {
-    transform: translateY(-10%);
-    opacity: 0;
-}
-}
-
-@keyframes flames {
-from {
-  opacity: 0.6;
-}
-to {
-  opacity: 1;
-}
-}
-
-.gauge-meter-chart {
-  max-height: 50%;
-  max-width: 50%;
-
-  @for $i from 1 through 8 {
-      .p-#{$i} {
-          opacity: 0.7;
-          transition: all 1s;
-
-          &.selected {
-              opacity: 1;
-              transition: all 1s;
-          }
-      }
-  } 
-
-  .pointer {
-      transform: rotateZ(-90deg);
-      transform-origin: 50% 95%;
-      transition: all 2.3s cubic-bezier(.87,-.41,.19,1.44);
-  }
-}
-
-.centered-box {
-  margin-top: -30px; /* Space above the meter */
-  max-width: 70%; /* Adjust size */
-  width: 450px;
-  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-  padding: 15px; /* Padding for the gauge meter */
-  border-radius: 5px;
-}
-
-.wrapper .centered-box{
-
- margin-left: 35%;
-  
-}
-/* Meter end */
-
-
-
-@media (max-width: 700px){
-    .footerNav ul{
-        flex-direction: column;
-    } 
-    .footerNav ul li{
-        width:100%;
-        text-align: center;
-        margin: 10px;
-    }
-    .socialIcons a{
-        padding: 8px;
-        margin: 4px;
+// Custom function to map GPA to the gauge meter
+function mapGpaToGauge(gpa) {
+    if (gpa >= 4) {
+        return 100;  // Excellent
+    } else if (gpa >= 3.90) {
+        return 95;   // Good
+    } else if (gpa >= 3.80) {
+        return 88;   // Good
+    } else if (gpa >= 3.75) {
+        return 80;   // Good
+    }else if (gpa >= 3.50) {
+        return 75;   // Good
+    }else if (gpa >= 3.30) {
+        return 65;   // Good
+    } else if (gpa >= 3.00) {
+        return 55;   // Good
+    }  else if (gpa >= 2.75) {
+        return 50;   // Average
+    }else if (gpa >= 2.50) {
+        return 40;   // Average
+    } else if (gpa >= 2.30) {
+        return 30;   // Average
+    }  else if (gpa >= 2.00) {
+        return 25;   // Poor
+    } else {
+        return 0;    // Very Bad
     }
 }
+
+// Update the gauge pointer based on GPA percentage
+function GaugeChart_SetPercent(el, _perc) {
+    el.dataset.percent = _perc;  // Update the gauge meter with new percent value
+    GaugeChart_Animate(el);      // Reanimate the pointer based on new percent value
+}
+
+// Function to animate the gauge pointer
+function GaugeChart_Animate(el) {
+    var pointer = el.querySelector(".pointer");
+    if (!pointer) return;
+
+    var percent_deg = 1.8; // Degree of movement per percent
+    var _perc = parseInt(el.dataset.percent);
+    var percent_deg_style = _perc * percent_deg - 90;
+
+    if (percent_deg_style < -90) percent_deg_style = -90;
+    if (percent_deg_style > 90) percent_deg_style = 90;
+
+    pointer.style.transform = `rotateZ(${percent_deg_style}deg)`;
+
+    // Change color or flame gauge effect based on high GPA
+    if (_perc >= 87.5) {
+        el.querySelector(".flame-gauge").classList.add("active");
+    } else {
+        el.querySelector(".flame-gauge").classList.remove("active");
+    }
+}
+
+// Function to remove a course row
+function removeChild(self) {
+    if (courseForm.children.length > 1) {
+        courseForm.removeChild(self);
+    }
+}
+
+// Ensure the initial course remove buttons are functional
+document.querySelectorAll(".remove-course").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        const self = e.target.closest('.col');
+        removeChild(self);
+    });
+});
+
+GaugeChart_BehaviorInit();
+ 
