@@ -1,4 +1,4 @@
-
+// Select relevant DOM elements
 const btn = document.getElementById("submit-btn");
 const addCourseBtn = document.getElementById("add-btn");
 const courseForm = document.getElementById("course-form");
@@ -6,6 +6,7 @@ const gp = document.getElementById("gp");
 const overallCgpaBox = document.getElementById("overall-cgpa");
 const currentCgpaInput = document.getElementById("current-cgpa");
 const completedCreditsInput = document.getElementById("completed-credits");
+const statusBox = document.getElementById("status-box"); // Status box for GPA messages
 
 // Event listener for the submit button
 btn.addEventListener("click", () => {
@@ -100,6 +101,25 @@ function calculateGP(data) {
     let newGPA = cummPoints / totalUnits;
     gp.textContent = `GPA: ${newGPA.toFixed(2)}`;
 
+    // Determine and display status based on GPA value
+    let status = "";
+    if (newGPA >= 4) {
+        status = "Excellent";
+    } else if (newGPA >= 3.75) {
+        status = "Very Good";
+    } else if (newGPA >= 3.50) {
+        status = "Good";
+    }else if (newGPA >= 3.00) {
+        status = "Averange";
+    } else if (newGPA >= 2.50) {
+        status = "Poor";
+    }else if (newGPA >= 2.00) {
+        status = "Bad";
+    }  else {
+        status = "Very Bad";
+    }
+    statusBox.textContent = `${status}`; // Display the status message
+
     // Calculate overall CGPA
     let currentCgpa = parseFloat(currentCgpaInput.value);
     let completedCredits = parseFloat(completedCreditsInput.value);
@@ -118,24 +138,24 @@ function mapGpaToGauge(gpa) {
     if (gpa >= 4) {
         return 100;  // Excellent
     } else if (gpa >= 3.90) {
-        return 95;   // Good
+        return 95;   // Very Good
     } else if (gpa >= 3.80) {
-        return 88;   // Good
+        return 88;   // Very Good
     } else if (gpa >= 3.75) {
-        return 80;   // Good
-    }else if (gpa >= 3.50) {
+        return 80;   // Very Good
+    } else if (gpa >= 3.50) {
         return 75;   // Good
-    }else if (gpa >= 3.30) {
+    } else if (gpa >= 3.30) {
         return 65;   // Good
     } else if (gpa >= 3.00) {
         return 55;   // Good
-    }  else if (gpa >= 2.75) {
+    } else if (gpa >= 2.75) {
         return 50;   // Average
-    }else if (gpa >= 2.50) {
+    } else if (gpa >= 2.50) {
         return 40;   // Average
     } else if (gpa >= 2.30) {
         return 30;   // Average
-    }  else if (gpa >= 2.00) {
+    } else if (gpa >= 2.00) {
         return 25;   // Poor
     } else {
         return 0;    // Very Bad
@@ -185,5 +205,5 @@ document.querySelectorAll(".remove-course").forEach((btn) => {
     });
 });
 
+// Initialize gauge behavior
 GaugeChart_BehaviorInit();
- 
